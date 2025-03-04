@@ -37,7 +37,7 @@ echo === To select a program, usually a specific resolution: "-map p:[PROGRAM #]
 echo === To set timestamps: "-ss [HH:MM:SS] -to [HH:MM:SS]"
 set /P optionals="Enter optional parameters: "
 echo:
-echo ffmpeg -headers "referer: https://emturbovid.com/" -i "%url%" %optionals% -c copy -bsf:a aac_adtstoasc output_file.mp4
+ffmpeg -headers "referer: https://emturbovid.com/" -i "%url%" %optionals% -c copy -bsf:a aac_adtstoasc output_file.mp4
 goto QUIT
 
 :COMBINE
@@ -54,5 +54,6 @@ set /P url="Enter a url: "
 echo:
 ffmpeg -i "%url%"
 pause
+goto PROMPT
 
 :QUIT
