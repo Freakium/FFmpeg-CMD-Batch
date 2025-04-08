@@ -54,6 +54,7 @@ set /P url="Enter a url: "
 echo:
 ffmpeg -i "%url%"
 pause
+echo:
 goto PROMPT
 
 :QUIT
