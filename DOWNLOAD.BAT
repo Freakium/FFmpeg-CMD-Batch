@@ -45,7 +45,7 @@ echo === COMBINE AUDIO/VIDEO ===
 set /P audio="Enter audio file: "
 set /P video="Enter video file: "
 echo:
-ffmpeg -i "%audio%" -i "%video%" -c:v copy -map 0:v -map 1:a -y output_file.mp4
+ffmpeg -i "%audio%" -i "%video%" -c:v copy -c:a aac -map 0:a:0 -map 1:v:0 output_file.mp4
 goto QUIT
 
 :ANALYZE
